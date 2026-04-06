@@ -1,0 +1,53 @@
+// TYPING
+let text = "Siti Adelia Safitri";
+let i = 0;
+
+function typing(){
+  if(i < text.length){
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typing, 100);
+  }
+}
+typing();
+
+// SCROLL ANIMASI
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", ()=>{
+  sections.forEach(sec=>{
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 300;
+
+    if(top > offset){
+      sec.classList.add("show");
+    }
+  });
+});
+
+// NAV ACTIVE
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", ()=>{
+  let fromTop = window.scrollY;
+
+  navLinks.forEach(link=>{
+    let section = document.querySelector(link.getAttribute("href"));
+
+    if(section.offsetTop <= fromTop+100 && section.offsetTop + section.offsetHeight > fromTop){
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+});
+
+// MODAL
+function openModal(src){
+  document.getElementById("myModal").style.display="block";
+  document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+  document.getElementById("myModal").style.display="none";
+}

@@ -1,0 +1,144 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  color:white;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background: rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  padding:15px;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+
+nav a.active{
+  color:yellow;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:50px;
+  border-right:3px solid white;
+  white-space:nowrap;
+  overflow:hidden;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 25px;
+  border:none;
+  border-radius:20px;
+  background:white;
+  color:#0072ff;
+}
+
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+  opacity:0;
+  transform:translateY(50px);
+  transition:1s;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.glass{
+  background: rgba(255,255,255,0.1);
+  padding:30px;
+  border-radius:20px;
+  backdrop-filter: blur(10px);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background: rgba(255,255,255,0.15);
+  padding:20px;
+  border-radius:15px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 20px white;
+}
+
+.gallery{
+  width:100%;
+  border-radius:15px;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.gallery:hover{
+  transform:scale(1.05);
+}
+
+.modal{
+  display:none;
+  position:fixed;
+  z-index:2000;
+  padding-top:100px;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+}
+
+.modal img{
+  display:block;
+  margin:auto;
+  max-width:80%;
+  border-radius:20px;
+}
+
+.contact a{
+  display:block;
+  margin:10px 0;
+  color:white;
+  text-decoration:none;
+}
+
+.contact a:hover{
+  color:yellow;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:20px;
+}
